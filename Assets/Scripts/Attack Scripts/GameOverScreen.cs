@@ -1,20 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 
 
 public class GameOver : MonoBehaviour
 {
+    [SerializeField] Button _restartGame;
+    [SerializeField] Button _exitGame;
     
-    public void RestartButton()
+
+    // Start is called before the first frame update
+    void Start()
     {
-        SceneManager.LoadScene("Map");
+        _restartGame.onClick.AddListener(RestartGame);
+        _exitGame.onClick.AddListener(ExitGame);
     }
 
-    public void ExitButton()
-    {
-        SceneManager.LoadScene("MainMenu");
+    private void RestartGame(){
+        Debug.Log("Restart");
+        SceneManager.LoadScene("MapWithScenesManager");
+    }
+    private void ExitGame(){
+        Debug.Log("Exit");
+        SceneManager.LoadScene("MainMenuWithScenesManager");
     }
 }
