@@ -11,14 +11,22 @@ public class manageTrap : MonoBehaviour
     void Update()
     {
         if (inArea) {
-            if(Input.GetKeyDown(KeyCode.E)){
-                Debug.Log("E");
-                GameObject newObject = Instantiate(knifeTrap, gameObject.transform.position, transform.rotation);
-                Debug.Log(gameObject.transform);
-            } else if (Input.GetKeyDown(KeyCode.Q)) {
-                Debug.Log("Q");
-                GameObject newObject = Instantiate(panTrap, new Vector3(transform.position.x,transform.position.y+10,transform.position.z), new Quaternion(transform.rotation.x,transform.rotation.y+180,transform.rotation.z,1f));
-                Debug.Log(gameObject.transform);
+            if(Input.GetKeyDown(KeyCode.Q)){
+                if (GameStats.Money >= 10) {
+                    GameStats.Money -= 10;
+                    GameObject newObject = Instantiate(knifeTrap, gameObject.transform.position, transform.rotation);
+                    Debug.Log(gameObject.transform);
+                } else {
+                    Debug.Log("Your Broke");
+                }
+            } else if (Input.GetKeyDown(KeyCode.E)) {
+                if (GameStats.Money >= 15) {
+                    GameStats.Money -= 15;
+                    GameObject newObject = Instantiate(panTrap, new Vector3(transform.position.x,transform.position.y+10,transform.position.z), new Quaternion(transform.rotation.x,transform.rotation.y+180,transform.rotation.z,1f));
+                    Debug.Log(gameObject.transform);
+                } else {
+                    Debug.Log("Your Broke");
+                }
             }
         }
     }
