@@ -8,8 +8,10 @@ public class FlipCheck : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-         if(other.CompareTag("Enemy"))
+        Debug.Log("Entered!");
+        if(other.CompareTag("Enemy"))
         {
+            Debug.Log("Check!");
             PlayAnim();
         
         }

@@ -14,4 +14,7 @@ public class GameStats : MonoBehaviour
         Money = startMoney;
         Lives = startLives;
     }
+    void Update(){
+        Debug.Log(Money);
+    }
 }

@@ -12,8 +12,8 @@ public class TowerAttack : MonoBehaviour
     {
          if(other.CompareTag("Enemy"))
         {
-            other.gameObject.SetActive(false);
-            atm.TakeDamage(damage);
+            atm.TakeDamage(other.GetComponent<AttributesManager>().attack);
+            Destroy(other.gameObject);
         }
     }
 }

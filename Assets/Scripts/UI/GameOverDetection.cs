@@ -15,6 +15,16 @@ public class GameOverDetection : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Time.timeScale = 0f;
-        SceneManager.LoadScene("GameOverWithScenesManager");
+        SceneManager.LoadScene("GameOver");
+    }
+
+    void Update(){
+        if(GameStats.Lives <= 0){
+            HUDUI.SetActive(false);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Time.timeScale = 0f;
+            SceneManager.LoadScene("GameOver");
+        }
     }
 }

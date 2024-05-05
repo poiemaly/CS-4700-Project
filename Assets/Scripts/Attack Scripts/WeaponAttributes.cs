@@ -15,7 +15,7 @@ public class WeaponAttributes : MonoBehaviour
             other.GetComponent<AttributesManager>().TakeDamage(atm.attack);
 
             if(other.GetComponent<AttributesManager>().getHealth() <= 0){
-                other.gameObject.SetActive(false);
+                Destroy(other.gameObject);
                 atm.increaseCurrency(10);
             }
             

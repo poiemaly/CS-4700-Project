@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     public int initialDamage;
     private NavMeshAgent agent;
     private Spawner spawner;
-    private float countdown = 10f;
+    //private float countdown = 10f;
 
     void start(){
         
@@ -21,14 +21,14 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        countdown -= Time.deltaTime;
+        //countdown -= Time.deltaTime;
 
 
-        if(countdown <= 0){
-            Destroy(gameObject);
-            spawner.waves[spawner.currentWave].enemiesLeft--;
-            GameStats.Lives -= initialDamage;
-        }
+        //if(countdown <= 0){
+        //    Destroy(gameObject);
+        //    spawner.waves[spawner.currentWave].enemiesLeft--;
+        //    GameStats.Lives -= initialDamage;
+        //}
         
     }
 

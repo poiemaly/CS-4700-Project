@@ -12,7 +12,7 @@ public class AttributesManager : MonoBehaviour
     public void increaseCurrency(int amount)
     {
 
-        currency += amount;
+        GameStats.Money += amount;
     }
 
 
